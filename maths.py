@@ -1,7 +1,11 @@
+"""Simple math methods"""
+
+
 class SimpleMath():
-    def __init__():
-        pass
-    def addition(a,b):
-        return a+b
-    def substract(a,b):
-        return a-b
+    """Simple Math"""
+    def addition(self,a,b):
+        """add"""
+        return a + b
+    def substract(self,a,b):
+        """sub"""
+        return a - b

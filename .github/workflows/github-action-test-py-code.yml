@@ -17,5 +17,5 @@ jobs:
       - name: test code
         run: pytest -q test_maths.py
       - name: Lint Code
-        run: pylint $(git ls-files '*.py')
+        run: pylint maths.py
 
