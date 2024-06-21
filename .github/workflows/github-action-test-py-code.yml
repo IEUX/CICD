@@ -13,9 +13,12 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - name: Install dependencies
         run: pip install pytest pylint
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: test code
-        run: pytest -q test_maths.py
+      - uses: actions/checkout@v2
       - name: Lint Code
         run: pylint maths.py
+      - name: Build the Docker image
+        run: docker build -t testContainer .
+      - name: Test code
+        run: docker run testContainer
+      
 
