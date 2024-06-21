@@ -11,8 +11,11 @@ jobs:
       - name: Check out repository code 
         uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: pip install pytest
+      - name: Install dependencies
+      - run: pip install pytest pylint
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: test code
-        run: pytest -q test_maths.py
+      - run: pytest -q test_maths.py
+      - name: Lint Code
+      - run: pylint $(git ls-files '*.py')
 
