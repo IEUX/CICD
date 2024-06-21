@@ -17,8 +17,8 @@ jobs:
       - name: Lint Code
         run: pylint maths.py
       - name: Build the Docker image
-        run: docker build -t testContainer .
+        run: docker build -t test_container .
       - name: Test code
-        run: docker run testContainer
+        run: docker run test_container
       
 
